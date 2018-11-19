@@ -11,6 +11,7 @@ module.exports = class ServerlessKintone {
   constructor(serverless, options) {
     this.serverless = serverless;
     this.options = options || {};
+    this.provider = this.serverless.getProvider('aws');
 
     Object.assign(this, validate, addLibraries, removeLibraries, setEnv);
 
